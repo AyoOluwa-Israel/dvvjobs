@@ -2,7 +2,16 @@ import React from 'react'
 // import Img from 'react-optimized-image';
 import Phone from '../../images/Iphone.png'
 import Navbar from '../Navbar'
+import { motion } from 'framer-motion';
+
 const Home = () => {
+
+
+  const fadeLeft ={
+    hidden: {opacity:0, y:0},
+    visible: {opacity:1, y:-40}
+  }
+
   return (
     <>
       <div className="container">
@@ -23,9 +32,13 @@ const Home = () => {
           </div>
 
           <div className="hero__right">
-            <img
+            <motion.img
               src={Phone}
               alt="author"
+              variants={fadeLeft}
+              initial='hidden'
+              animate='visible'
+              transition={{ duration: 1 }}
             />
           </div> 
         </div>
