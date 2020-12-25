@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react';
 // import Img from 'react-optimized-image';
 import Phone from '../../images/Iphone.png'
 import Navbar from '../Navbar'
 import { motion } from 'framer-motion';
+import NavModal from '../NavModal';
 
 const Home = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+  setOpen(!open)
+  console.log("hello");
+  }
 
 
   const fadeLeft ={
@@ -17,9 +24,9 @@ const Home = () => {
       <div className="container">
         <div className="wrapper">
           <div className="header">
-            <Navbar/>
+            <Navbar handleClick={handleClick} open={open} />
           </div>
-        <div className="hero">
+          <div className="hero">
           <div className="hero__left">
             <h1>
               Making <span>job hunting </span> <br/>
@@ -43,6 +50,10 @@ const Home = () => {
           </div> 
         </div>
         </div>
+        {
+          open ? <NavModal open={open}/> : null
+        }
+        
       </div>
     </>
   )
