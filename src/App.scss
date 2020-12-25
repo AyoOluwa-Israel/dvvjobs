@@ -181,7 +181,7 @@ $fontColor: #ffffff;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 50vh;
+  height: 60vh;
 }
 .login__form form{
   width: 80%;
@@ -296,7 +296,13 @@ $fontColor: #ffffff;
   }
   .login__text__logo{
     height: 30px;
+    width: 75%;
   }
-
+  .login__bottom{
+    width: 80%;
+    }
+    .login__bottom{
+      margin-top: 3em;
+    }
   
 }
